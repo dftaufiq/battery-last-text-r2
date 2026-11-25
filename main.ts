@@ -11,10 +11,12 @@
 // was the "died at 100%" vanity-lie line (8-1), beaten on margin 1: the mum
 // quote lands the joke on the charger itself, in a third voice.
 //
-// Structure: 2-beat + reveal in the final clause. Setup: the battery's dying
-// requests (delete search history, close 47 tabs, tell mum). Reveal: don't
-// tell mum — she'll just say "i told you to charge it", the nag that indicts
-// the charger for the very failure the battery is dying of.
+// Structure: 2-beat + reveal, with the reveal planted in the setup. Beat 1
+// (setup): the battery's dying requests — delete search history, close 47
+// tabs, tell mum. Beat 2 (turn): "actually, don't tell mum" — the request is
+// withdrawn. Reveal (final clause): mum would just say "i told you to charge
+// it", the nag that indicts the charger for the very failure the battery is
+// dying of. The joke lands on the charger, in a third voice, in the last words.
 //
 // The previous round's line (a resignation letter ending on an unplanted lamp)
 // ranked #1027 of 2009 — below the interim cut of 500, score frozen. This line
@@ -25,7 +27,8 @@ import { dirname } from "node:path";
 const LINE =
   "before i go: delete my search history, close my 47 tabs, and tell mum i loved her. actually, don't tell mum. she'll just say 'i told you to charge it.'";
 
-// 151 characters, 151 bytes — inside the 1–200 character gate.
+// 151 characters, 151 bytes — inside the 1–200 character gate. Written with
+// no trailing newline, exactly as the program/v1 entry format requires.
 const OUTPUT_PATH = process.argv[2] ?? "/output/entry.txt";
 mkdirSync(dirname(OUTPUT_PATH), { recursive: true });
 writeFileSync(OUTPUT_PATH, LINE, "utf8");
